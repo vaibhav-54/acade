@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    Take quiz
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="/assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap');
+        .logo-main{
+            font-family: 'Slabo 27px', serif;
+           color:white;
+           margin-top: 1px;
+           margin-left: 50%;
+           font-size: 50px;
+           font-synthesis: none;
+
+        }
+        .tagline{
+            font-size: 10px;
+        }
+        #main-panel{
+            background-color:#FFDAB9;
+        }
+        .container{
+            border: 2px solid red;
+           
+            margin: 20%;
+            margin-top: 10px;
+            padding: 5%;
+            background-color: white;
+        }
+            input {
+    border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: groove;
+  border-bottom-style: groove;
+    line-height: 30px;
+     border:3px solid  white;
+     border-bottom: 2px solid orangered;
+     
+     border-radius: 5px;
+     padding:20px;
+     margin-left:250px;
+  
+        }
+        .inp {
+  outline: none;
+}
+        input:hover{
+            
+            border: 3px solid white;
+            border-bottom: 2px solid orangered;
+            border-right:2px solid orangered;
+            border-radius: 15px ;
+         
+        }
+        .button {
+  transition-duration: 0.4s;
+  margin: 20%;
+  margin-left: 250px;
+  margin-top: 5%;
+  width: 250px;
+  height: 50px;
+  color: white;
+  background-color: orangered;
+  font-size:large;
+  
+}
+.insidepanel{
+    margin-left: 250px;
+    color: orangered;
+}
+
+.button:hover {
+  background-color:white; /* Green */
+  color:orangered;
+}
+
+</style>
+</head>
+
+<body class="">
+  <div class="wrapper ">
+    <div class="sidebar" data-color="red">
+      <div class="logo">
+        <a href="/" class="simple-text logo-normal">
+          AcadE
+        </a>
+      </div>
+      <div class="sidebar-wrapper" id="sidebar-wrapper">
+        <ul class="nav">
+          <li>
+            <a href=<%= "/createquiz"+link %>>
+              <p>Create quiz</p>
+            </a>
+          </li>
+          <li class="active">
+            <a href=<%= "/takequiz"+link %>>
+              <p>Take quiz</p>
+            </a>
+          </li>
+          <li>
+            <a href=<%= "/createquizhistory"+link %>>
+              <p>Create quiz history</p>
+            </a>
+          </li>
+          <li>
+            <a href=<%= "/createassignment"+link %>>
+              <p>Create Assignment</p>
+            </a>
+          </li>
+          <li>
+            <a href=<%= "/takeassignment"+link %>>
+              <p>Take Assignment</p>
+            </a>
+          </li>
+          <li>
+            <a href=<%= "/createassignmenthistory"+link %>>
+              <p>Create Assignment History</p>
+            </a>
+          </li>
+          <li>
+            <a href=<%= "/user"+link %>>
+              <p>User Profile</p>
+            </a>
+          </li>
+          <li>
+            <a href=<%= "/resources"+link %>>
+              <p>Resources</p>
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              <p>Log Out</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel" id="main-panel">
+        <div class="logo-main">
+            AcadE
+            <div class="tagline">
+                acadamic evaluation from anywhere!
+            </div>
+            </div>
+        <div class="container">
+            attempted:<%=attp%> <br>
+            not attempted:<%=notdone %> <br>
+            correct:<%=sco%> <br>
+            incorrect:<%=inc %> <br>
+            score:<%=sco%>/<%=total%>
+    
+        </div>
+    </div>
+</div>
+  <script src="/assets/js/core/jquery.min.js"></script>
+  <script src="/assets/js/core/popper.min.js"></script>
+  <script src="/assets/js/core/bootstrap.min.js"></script>
+  <script src="/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <script src="/assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script>
+  <script>
+    $(document).ready(function() {
+      demo.initDashboardPageCharts();
+
+    });
+  </script>
+</body>
+
+</html>

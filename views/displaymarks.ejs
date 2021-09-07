@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    Marks
+  </title>
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="/assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
+  <link href="/assets/demo/demo.css" rel="stylesheet" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap');
+    .logo-main{
+        font-family: 'Slabo 27px', serif;
+       color:white;
+       margin-top: 1px;
+       margin-left: 50%;
+       font-size: 50px;
+       font-synthesis: none;
+
+    }
+    .tagline{
+        font-size: 10px;
+    }
+    #main-panel{
+        background-color: rgba(248, 147, 110, 0.87);
+    }
+    .container{
+        border: 2px solid red;
+        margin: 20%;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        padding: 5%;
+        background-color: white;
+    }
+        input {
+border-top-style: hidden;
+border-right-style: hidden;
+border-left-style: groove;
+border-bottom-style: groove;
+line-height: 20px;
+ border:3px solid  white;
+ border-bottom: 2px solid orangered;
+ 
+ border-radius: 5px;
+ padding:2px;
+ margin:5px;
+ outline: none;
+
+    }
+   
+    input:hover{
+        
+        border: 3px solid white;
+        border-bottom: 2px solid orangered;
+        border-right:2px solid orangered;
+        border-radius: 15px ;
+     
+    }
+    .button {
+transition-duration: 0.4s;
+margin: 5%;
+margin-top: 5%;
+width: 250px;
+height: 50px;
+color: white;
+background-color: orangered;
+font-size:large;
+
+}
+
+.button:hover {
+background-color:white; /* Green */
+color:orangered;
+}
+
+body{
+background-color:orangered;
+}
+.head{
+text-align: center;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-size: 50px;;
+
+border-radius: 30px;
+
+color: orangered;
+}
+
+.question{
+margin-top:30px;
+padding: 30px;
+
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+background-color:white;
+border-radius: 30px;
+color:orangered;
+}
+.option{
+
+
+border-radius: 30px;
+color: orangered;
+
+margin-top: 10px;
+font-style: normal;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+.answer
+{
+color:green;
+margin-top: 30px;
+
+font-style: oblique;
+border-radius: 30px;
+text-align: center;
+background-color:white;
+
+}
+ul{
+list-style: none;
+}
+.inputt{
+
+border: 2px solid red;
+        margin: 20%;
+        margin-top: 10px;
+        padding: 5%;
+        background-color: white;
+}
+table,th,td{
+    border:1px solid black;
+    border-collapse: collapse;
+    padding: 15px;
+    text-align: left;
+    justify-content: center;
+    border-spacing: 5px;
+    background-color: #f1f1c1;
+}
+</style>
+</head>
+
+<body class="">
+  <div class="wrapper ">
+    <div class="sidebar" data-color="red">
+      <div class="logo">
+        <a href="/" class="simple-text logo-normal">
+          AcadE
+        </a>
+      </div>
+      <div class="sidebar-wrapper" id="sidebar-wrapper">
+        <ul class="nav">
+          <li>
+            <a href=<%= "/createquiz"+link %>>
+              <p>Create quiz</p>
+            </a>
+          </li>
+          <li>
+            <a href=<%= "/takequiz"+link %>>
+              <p>Take quiz</p>
+            </a>
+          </li>
+          <li  class="active">
+            <a href=<%= "/createquizhistory"+link %>>
+              <p>Create quiz history</p>
+            </a>
+          </li>
+          <li>
+            <a href=<%= "/createassignment"+link %>>
+              <p>Create Assignment</p>
+            </a>
+          </li>
+          <li>
+            <a href=<%= "/takeassignment"+link %>>
+              <p>Take Assignment</p>
+            </a>
+          </li>
+          <li>
+            <a href=<%= "/createassignmenthistory"+link %>>
+              <p>Create Assignment History</p>
+            </a>
+          </li>
+          <li>
+            <a href=<%= "/user"+link %>>
+              <p>User Profile</p>
+            </a>
+          </li>
+          <li>
+            <a href=<%= "/resources"+link %>>
+              <p>Resources</p>
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              <p>Log Out</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel" id="main-panel">
+        <div class="logo-main">
+            AcadE
+            <div class="tagline">
+                acadamic evaluation from anywhere!
+            </div>
+            </div>
+            <div class="container">
+                <div class="head">
+                    Marks
+                </div>
+                <div>
+                    <table style="width:auto">
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Obtained Marks</th>
+                            <th>Total Marks</th>
+                        </tr>
+                        <% for(var i=0; i<aitems.length; i++) { %>
+                            <tr>
+                                <td><%= aitems[i].fname %> </td>
+                                <td><%= aitems[i].lname %> </td>
+                                <td><%= aitems[i].score %> </td>
+                                <td><%= aitems[i].total %> </td>
+                            </tr>
+                        <% } %>  
+                    </table>
+                </div>
+    </div>
+  <script src="/assets/js/core/jquery.min.js"></script>
+  <script src="/assets/js/core/popper.min.js"></script>
+  <script src="/assets/js/core/bootstrap.min.js"></script>
+  <script src="/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <script src="/assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script>
+  <script src="/assets/demo/demo.js"></script>
+  <script>
+    $(document).ready(function() {
+      demo.initDashboardPageCharts();
+
+    });
+  </script>
+</body>
+
+</html>
